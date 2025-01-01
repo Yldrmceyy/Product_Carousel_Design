@@ -21,7 +21,7 @@
                 `
                   )
                   .join("")}
-            </div>
+        </div>
             <button class="carousel-btn left">←</button>
             <button class="carousel-btn right">→</button>
         </div>
