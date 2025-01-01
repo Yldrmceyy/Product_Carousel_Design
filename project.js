@@ -15,6 +15,7 @@
     const response = await fetch('https://gist.githubusercontent.com/sevindi/5765c5812bbc8238a38b3cf52f233651/raw/56261d81af8561bf0a7cf692fe572f9e1e91f372/products.json');
     const products = await response.json();
     localStorage.setItem('products', JSON.stringify(products)); // Local Storage'a kaydet.
+
     return products;
 };
   const buildHTML = () => {
