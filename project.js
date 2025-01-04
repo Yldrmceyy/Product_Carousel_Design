@@ -150,7 +150,8 @@ document.getElementsByTagName("head")[0].appendChild(script);
     right: 10px; 
 }
 
-            @media (max-width: 768px) {
+           
+ @media (max-width: 768px) {
                 .product-card {
                     flex: 0 0 calc(100% / 2); /* Mobilde 2 ürün görünür */
                 }
