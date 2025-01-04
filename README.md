@@ -4,7 +4,6 @@
 
 This project involves creating a **Product Carousel** for a product page on [LC Waikiki](https://www.lcwaikiki.com). The goal is to replicate the carousel design visible on LC Waikiki’s product pages with enhanced interactivity and responsiveness.
 
----
 
 ## Features
 
@@ -38,7 +37,6 @@ This project involves creating a **Product Carousel** for a product page on [LC 
    - Developed using only **JavaScript** and **jQuery**.
    - Fully customizable CSS created dynamically using JavaScript.
 
----
 
 ## Technical Details
 
@@ -57,7 +55,7 @@ This project involves creating a **Product Carousel** for a product page on [LC 
   - Handles click events for toggling the heart icon state.
   - Syncs with `localStorage` to persist user preferences.
 
----
+
 
 ## How to Use
 
