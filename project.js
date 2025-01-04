@@ -81,11 +81,17 @@ h2 {
   padding-bottom: 20px; /* Alt boşluk */
 }
 
-.carousel {
-  display: flex;
-  gap:5px; 
-  // transition: transform 0.3s ease-in-out;
-}
+ .carousel-wrapper {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .carousel {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 5px;
+      }
+
 
 .product-card {
   flex: 0 0 calc(100% / 6.5);
@@ -108,7 +114,7 @@ h2 {
 .product-card img {
   width: 100%;
   height: auto;
-  margin-bottom: 4px; /* Resim ile altındaki yazı arasında boşluk */
+  margin-bottom: 2px; 
   border-bottom: 1px solid #eaeaea; /* Resmin altında ince bir çizgi */
   border-radius: 1px;
 }
@@ -118,10 +124,10 @@ h2 {
   font-size: 14px; /* Yazı boyutu */
   color: #333; /* Yazı rengi */
   font-weight: 400; /* Yazı kalınlığı */
-  padding: 1px 4px;
-  line-height: 1.4; /* Satır aralığı */
-  max-height: 40px; /* En fazla 2 satır olmasını sağlar */
-  overflow: hidden; /* Fazla metni gizler */
+  padding: 2px 4px;
+  line-height: 1.4; 
+  max-height: 40px; 
+  overflow: hidden; 
   text-overflow: ellipsis; /* Uzun metinlerde üç nokta ekler */
   display: -webkit-box; /* Flex tabanlı görüntü */
   -webkit-line-clamp: 2; /* En fazla 2 satır */
@@ -133,7 +139,7 @@ h2 {
   font-size: 18px; /* Yazı boyutu */
   color: #0038ae; /* Fiyat rengi */
   font-weight: bold; /* Yazı kalınlığı */
-  margin: 5px 0;
+  padding: 2px 4px;
   text-align: left; /* Sol hizalama */
   min-height: 24px; /* Sabit yükseklik, fiyatların hizalanması için */
 }
@@ -157,23 +163,20 @@ h2 {
 ;
 }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: #333;
-  border: none;
-  border-radius: 50%;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+  .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #333;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
 
 .carousel-btn:hover {
   background-color: rgba(0, 0, 0, 0.2);
@@ -212,15 +215,17 @@ h2 {
   const scrollCarousel = (direction) => {
     const carousel = $(".carousel");
     const productWidth = $(".product-card").outerWidth(true);
-    const visibleWidth = $(".carousel-container").outerWidth();
-    const maxScroll = Math.floor(visibleWidth / productWidth) * productWidth;
+    const currentScroll =
+      parseInt(carousel.css("transform").split(",")[4]) || 0;
+    const maxScroll =
+      productWidth * $(".product-card").length -
+      $(".carousel-wrapper").outerWidth();
 
-    let currentScroll = parseInt(carousel.css("transform").split(",")[4]) || 0;
     let newScroll = currentScroll + direction * productWidth;
 
-    // Scroll sınırları kontrol et
-    newScroll = Math.max(newScroll, -maxScroll);
-    newScroll = Math.min(newScroll, 0);
+    // Clamp scroll position
+    if (newScroll > 0) newScroll = 0;
+    if (Math.abs(newScroll) > maxScroll) newScroll = -maxScroll;
 
     carousel.css("transform", `translateX(${newScroll}px)`);
   };
