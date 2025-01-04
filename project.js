@@ -38,7 +38,9 @@ document.getElementsByTagName("head")[0].appendChild(script);
       <div class="carousel-container">
         <h2>You Might Also Like</h2>
         <div class="carousel">
-          ${products.map(product => `
+          ${products
+            .map(
+              (product) => `
             <div class="product-card" data-id="${product.id}">
               <a href="${product.url}" target="_blank">
                 <img src="${product.img}" alt="${product.name}">
@@ -47,7 +49,9 @@ document.getElementsByTagName("head")[0].appendChild(script);
               </a>
               <button class="heart-icon">♡</button>
             </div>
-          `).join('')}
+          `
+            )
+            .join("")}
         </div>
         <button class="carousel-btn left"><</button>
         <button class="carousel-btn right">></button>
@@ -55,7 +59,6 @@ document.getElementsByTagName("head")[0].appendChild(script);
     `;
     $(".product-detail").append(html);
   };
-  
 
   const buildCSS = () => {
     const css = `
@@ -98,6 +101,9 @@ document.getElementsByTagName("head")[0].appendChild(script);
                 color: #f15a24;
                 font-weight: bold;
                 margin: 5px 0;
+            }
+            .product-card {
+                cursor: pointer; /* Fare imlecini tıklanabilir yapar */
             }
             .heart-icon {
                 position: absolute;
