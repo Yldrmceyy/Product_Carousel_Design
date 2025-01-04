@@ -67,18 +67,18 @@
   overflow: hidden;
   margin: 20px auto;
   padding: 10px 40px;
-  background-color: #f9f9f9; /* Daha açık bir arka plan */
+  background-color: #f9f9f9; 
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  font-family: "Roboto", sans-serif; /* Adelle'ye benzeyen modern sans-serif yazı tipi */
-  font-size: 24px; /* Başlık boyutu */
-  font-weight: 300; /* Normal kalınlık */
-  color: #333; /* Siyahımsı bir renk */
-  text-align: left; /* Sol hizalama */
-  padding-bottom: 20px; /* Alt boşluk */
+  font-family: "Roboto", sans-serif; 
+  font-size: 24px; 
+  font-weight: 300; 
+  color: #333; 
+  text-align: left; 
+  padding-bottom: 20px; 
 }
 
  .carousel-wrapper {
@@ -96,52 +96,52 @@ h2 {
 .product-card {
   flex: 0 0 calc(100% / 6.5);
   background: #fff;
-  text-align: left; /* Ürün detaylarını sola hizala */
-  border: 1px solid #eaeaea; /* Daha açık bir sınır */
+  text-align: left; 
+  border: 1px solid #eaeaea; 
   border-radius: 2px;
   position: relative;
  
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Daha hafif gölge */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .product-card:hover {
-  transform: scale(1.02); /* Hover'da büyüme efekti */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Daha belirgin gölge */
+  transform: scale(1.02); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
 }
 
 .product-card img {
   width: 100%;
   height: auto;
   margin-bottom: 2px; 
-  border-bottom: 1px solid #eaeaea; /* Resmin altında ince bir çizgi */
+  border-bottom: 1px solid #eaeaea; 
   border-radius: 1px;
 }
 
 .product-card h3 {
-  font-family: "Roboto", sans-serif; /* Yazı tipi */
-  font-size: 14px; /* Yazı boyutu */
-  color: #333; /* Yazı rengi */
-  font-weight: 400; /* Yazı kalınlığı */
+  font-family: "Roboto", sans-serif; 
+  font-size: 14px;
+  color: #333; 
+  font-weight: 400; 
   padding: 2px 4px;
   line-height: 1.4; 
   max-height: 40px; 
   overflow: hidden; 
-  text-overflow: ellipsis; /* Uzun metinlerde üç nokta ekler */
-  display: -webkit-box; /* Flex tabanlı görüntü */
-  -webkit-line-clamp: 2; /* En fazla 2 satır */
-  -webkit-box-orient: vertical; /* Metni dikeyde hizala */
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
 }
 
 .product-card p {
-  font-family: "Roboto", sans-serif; /* Yazı tipi */
-  font-size: 18px; /* Yazı boyutu */
-  color: #0038ae; /* Fiyat rengi */
-  font-weight: bold; /* Yazı kalınlığı */
+  font-family: "Roboto", sans-serif;/
+  font-size: 18px; 
+  color: #0038ae; 
+  font-weight: bold; 
   padding: 2px 4px;
-  text-align: left; /* Sol hizalama */
-  min-height: 24px; /* Sabit yükseklik, fiyatların hizalanması için */
+  text-align: left; 
+  min-height: 24px; 
 }
 
 
