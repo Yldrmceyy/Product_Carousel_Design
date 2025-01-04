@@ -176,24 +176,39 @@ document.getElementsByTagName("head")[0].appendChild(script);
 
   const toggleFavorite = (e) => {
     const heartIcon = $(e.target);
-    const productId = heartIcon.closest(".product-card").data("id");
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    if (favorites.includes(productId)) {
-      favorites = favorites.filter((id) => id !== productId);
-      heartIcon.removeClass("favorited");
-    } else {
-      favorites.push(productId);
-      heartIcon.addClass("favorited");
-    }
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  };
+    const productCard = heartIcon.closest(".product-card");
+    const product = {
+        id: productCard.data("id"),
+        name: productCard.find("h3").text(),
+        img: productCard.find("img").attr("src"),
+        price: productCard.find("p").text(),
+        url: productCard.find("a").attr("href")
+    };
 
-  const loadFavorites = () => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    favorites.forEach((id) => {
-      $(`.product-card[data-id="${id}"].heart-icon`).addClass("favorited");
-    });
-  };
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const exists = favorites.some(fav => fav.id === product.id);
+
+    if (exists) {
+        // Ürün favorilerden çıkarılır
+        favorites = favorites.filter(fav => fav.id !== product.id);
+        heartIcon.removeClass("favorited");
+    } else {
+        // Ürün favorilere eklenir
+        favorites.push(product);
+        heartIcon.addClass("favorited");
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+};
+
+
+const loadFavorites = () => {
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  favorites.forEach((fav) => {
+      const heartIcon = $(`.product-card[data-id="${fav.id}"] .heart-icon`);
+      heartIcon.addClass("favorited");
+  });
+};
 
   $(document).ready(() => {
     init();
