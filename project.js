@@ -63,28 +63,28 @@
   const buildCSS = () => {
     const css = `
      .carousel-container {
-  position: relative;
-  overflow: hidden;
-  margin: 20px auto;
-  padding: 10px 40px;
-  background-color: #f9f9f9; 
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+      position: relative;
+      overflow: hidden;
+      margin: 20px auto;
+      padding: 10px 40px;
+      background-color: #f9f9f9; 
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 
-h2 {
-  font-family: "Roboto", sans-serif; 
-  font-size: 24px; 
-  font-weight: 300; 
-  color: #333; 
-  text-align: left; 
-  padding-bottom: 20px; 
-}
+    h2 {
+      font-family: "Roboto", sans-serif; 
+      font-size: 24px; 
+      font-weight: 300; 
+      color: #333; 
+      text-align: left; 
+      padding-bottom: 20px; 
+    }
 
- .carousel-wrapper {
-        overflow: hidden;
-        position: relative;
-      }
+    .carousel-wrapper {
+            overflow: hidden;
+            position: relative;
+          }
 
       .carousel {
         display: flex;
@@ -93,114 +93,114 @@ h2 {
       }
 
 
-.product-card {
-  flex: 0 0 calc(100% / 6.5);
-  background: #fff;
-  text-align: left; 
-  border: 1px solid #eaeaea; 
-  border-radius: 2px;
-  position: relative;
- 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+        .product-card {
+          flex: 0 0 calc(100% / 6.5);
+          background: #fff;
+          text-align: left; 
+          border: 1px solid #eaeaea; 
+          border-radius: 2px;
+          position: relative;
+        
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
 
-.product-card:hover {
-  transform: scale(1.02); 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
-}
+        .product-card:hover {
+          transform: scale(1.02); 
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+        }
 
-.product-card img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 2px; 
-  border-bottom: 1px solid #eaeaea; 
-  border-radius: 1px;
-}
+        .product-card img {
+          width: 100%;
+          height: auto;
+          margin-bottom: 2px; 
+          border-bottom: 1px solid #eaeaea; 
+          border-radius: 1px;
+        }
 
-.product-card h3 {
-  font-family: "Roboto", sans-serif; 
-  font-size: 14px;
-  color: #333; 
-  font-weight: 400; 
-  padding: 2px 4px;
-  line-height: 1.4; 
-  max-height: 40px; 
-  overflow: hidden; 
-  text-overflow: ellipsis;
-  display: -webkit-box; 
-  -webkit-line-clamp: 2; 
-  -webkit-box-orient: vertical; 
-}
+        .product-card h3 {
+          font-family: "Roboto", sans-serif; 
+          font-size: 14px;
+          color: #333; 
+          font-weight: 400; 
+          padding: 2px 4px;
+          line-height: 1.4; 
+          max-height: 40px; 
+          overflow: hidden; 
+          text-overflow: ellipsis;
+          display: -webkit-box; 
+          -webkit-line-clamp: 2; 
+          -webkit-box-orient: vertical; 
+        }
 
-.product-card p {
-  font-family: "Roboto", sans-serif;/
-  font-size: 18px; 
-  color: #0038ae; 
-  font-weight: bold; 
-  padding: 2px 4px;
-  text-align: left; 
-  min-height: 24px; 
-}
+        .product-card p {
+          font-family: "Roboto", sans-serif;/
+          font-size: 18px; 
+          color: #0038ae; 
+          font-weight: bold; 
+          padding: 2px 4px;
+          text-align: left; 
+          min-height: 24px; 
+        }
 
 
-.heart-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  color: #aaa;
-  border: none;
-  background: none;
-  transition: color 0.3s ease;
-}
+        .heart-icon {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 20px;
+          cursor: pointer;
+          color: #aaa;
+          border: none;
+          background: none;
+          transition: color 0.3s ease;
+        }
 
-.heart-icon.favorited {
-  color: #0038ae
+        .heart-icon.favorited {
+          color: #0038ae
 
-;
-}
+        ;
+        }
 
-  .carousel-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background-color: rgba(0, 0, 0, 0.1);
-        color: #333;
-        border: none;
-        border-radius: 50%;
-        font-size: 18px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
+          .carousel-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                background-color: rgba(0, 0, 0, 0.1);
+                color: #333;
+                border: none;
+                border-radius: 50%;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+              }
 
-.carousel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
+        .carousel-btn:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
 
-.carousel-btn.left {
-  left: 10px;
-}
+        .carousel-btn.left {
+          left: 10px;
+        }
 
-.carousel-btn.right {
-  right: 10px;
-}
+        .carousel-btn.right {
+          right: 10px;
+        }
 
-@media (max-width: 768px) {
-  .product-card {
-    flex: 0 0 calc(100% / 2);
-  }
-}
+        @media (max-width: 768px) {
+          .product-card {
+            flex: 0 0 calc(100% / 2);
+          }
+        }
 
-@media (max-width: 480px) {
-  .product-card {
-    flex: 0 0 100%;
-  }
-}
+        @media (max-width: 480px) {
+          .product-card {
+            flex: 0 0 100%;
+          }
+        }
 
     `;
     $("<style>").addClass("carousel-style").html(css).appendTo("head");
@@ -221,13 +221,13 @@ h2 {
       productWidth * $(".product-card").length -
       $(".carousel-wrapper").outerWidth();
 
-    let newScroll = currentScroll + direction * productWidth;
+    let newScrollPosition = currentScroll + direction * productWidth;
 
     // Clamp scroll position
-    if (newScroll > 0) newScroll = 0;
-    if (Math.abs(newScroll) > maxScroll) newScroll = -maxScroll;
+    if (newScrollPosition > 0) newScrollPosition = 0;
+    if (Math.abs(newScrollPosition) > maxScroll) newScrollPosition = -maxScroll;
 
-    carousel.css("transform", `translateX(${newScroll}px)`);
+    carousel.css("transform", `translateX(${newScrollPosition}px)`);
   };
 
   const toggleFavorite = (e) => {
