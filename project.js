@@ -74,7 +74,7 @@
 
     h2 {
       font-family: "Roboto", sans-serif; 
-      font-size: 24px; 
+      font-size: 30px; 
       font-weight: 300; 
       color: #333; 
       text-align: left; 
@@ -117,6 +117,7 @@
           margin-bottom: 2px; 
           border-bottom: 1px solid #eaeaea; 
           border-radius: 1px;
+          overflow: hidden;
         }
 
         .product-card h3 {
@@ -215,19 +216,30 @@
   const scrollCarousel = (direction) => {
     const carousel = $(".carousel");
     const productWidth = $(".product-card").outerWidth(true);
+    const visibleWidth = $(".carousel-container").outerWidth();
+    const totalWidth = productWidth * $(".product-card").length;
+
     const currentScroll =
       parseInt(carousel.css("transform").split(",")[4]) || 0;
-    const maxScroll =
-      productWidth * $(".product-card").length -
-      $(".carousel-wrapper").outerWidth();
+
+    let maxScroll = -(totalWidth - visibleWidth);
+    maxScroll -= 100;
 
     let newScrollPosition = currentScroll + direction * productWidth;
 
-    // Clamp scroll position
-    if (newScrollPosition > 0) newScrollPosition = 0;
-    if (Math.abs(newScrollPosition) > maxScroll) newScrollPosition = -maxScroll;
+    if (newScrollPosition > 0) {
+      newScrollPosition = 0;
+    }
+
+    if (Math.abs(newScrollPosition) > Math.abs(maxScroll)) {
+      newScrollPosition = maxScroll;
+    }
 
     carousel.css("transform", `translateX(${newScrollPosition}px)`);
+
+    console.log(
+      `Current Scroll: ${currentScroll}, New Scroll: ${newScrollPosition}`
+    );
   };
 
   const toggleFavorite = (e) => {
