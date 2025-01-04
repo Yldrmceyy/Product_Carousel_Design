@@ -159,10 +159,23 @@
         }
 
         .heart-icon.favorited {
-          color: #0038ae
-
-        ;
+          color: #0038ae;
+                
+        
         }
+        .heart-icon.favorited::after {
+      content: "♥"; 
+      color: #0038ae; 
+      font-size: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
           .carousel-btn {
                 position: absolute;
