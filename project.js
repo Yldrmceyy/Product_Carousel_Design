@@ -1,7 +1,7 @@
-const script = document.createElement("script");
-script.src = "https://code.jquery.com/jquery-3.6.4.min.js";
-script.type = "text/javascript";
-document.getElementsByTagName("head")[0].appendChild(script);
+// const script = document.createElement("script");
+// script.src = "https://code.jquery.com/jquery-3.6.4.min.js";
+// script.type = "text/javascript";
+// document.getElementsByTagName("head")[0].appendChild(script);
 
 (() => {
   const init = async () => {
@@ -62,103 +62,143 @@ document.getElementsByTagName("head")[0].appendChild(script);
 
   const buildCSS = () => {
     const css = `
-      .carousel-container {
-        position: relative;
-        overflow: hidden;
-        margin: 20px auto;
-        padding: 10px 40px; /* Sağ ve sol kenarlardan boşluk ekler */
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-      .carousel {
-        display: flex;
-        gap: 10px;
-        transition: transform 0.3s ease-in-out;
-      }
-      .product-card {
-        flex: 0 0 calc(100% / 6.5);
-        background: #fff;
-        text-align: center;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        position: relative;
-        padding: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        cursor: pointer; /* Fare imlecini tıklanabilir yapar */
-      }
-      .product-card img {
-        width: 100%;
-        height: auto;
-        border-bottom: 1px solid #ddd;
-      }
-      .product-card h3 {
-        font-size: 14px;
-        color: #333;
-        margin: 8px 0;
-      }
-      .product-card p {
-        font-size: 16px;
-        color: #f15a24;
-        font-weight: bold;
-        margin: 5px 0;
-      }
-      .heart-icon {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 20px;
-        cursor: pointer;
-        color: #aaa;
-        border: none;
-        background: none;
-        transition: color 0.3s ease;
-      }
-      .heart-icon.favorited {
-        color: blue;
-      }
-      .carousel-btn {
-        position: absolute;
-        top: 50%; 
-        transform: translateY(-50%); 
-        width: 40px; 
-        height: 40px; 
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white; 
-        border: none; 
-        border-radius: 50%;
-        font-size: 18px; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: all 0.3s ease; 
-        z-index: 10;
-      }
-      .carousel-btn:hover {
-        background-color: rgba(0, 0, 0, 0.8); 
-      }
-      .carousel-btn.left {
-        left: 10px; 
-      }
-      .carousel-btn.right {
-        right: 10px; 
-      }
-      @media (min-width: 1024px) {
-        .carousel-container {
-          padding: 20px 60px; /* Sağ ve sol kenarlardan 60 piksel boşluk */
-        }
-      }
-      @media (max-width: 768px) {
-        .product-card {
-          flex: 0 0 calc(100% / 2); /* Mobilde 2 ürün görünür */
-        }
-      }
-      @media (max-width: 480px) {
-        .product-card {
-          flex: 0 0 100%; /* Mobilde tam genişlik */
-        }
-      }
+     .carousel-container {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  padding: 10px 40px;
+  background-color: #f9f9f9; /* Daha açık bir arka plan */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-family: "Roboto", sans-serif; /* Adelle'ye benzeyen modern sans-serif yazı tipi */
+  font-size: 24px; /* Başlık boyutu */
+  font-weight: 300; /* Normal kalınlık */
+  color: #333; /* Siyahımsı bir renk */
+  text-align: left; /* Sol hizalama */
+  padding-bottom: 20px; /* Alt boşluk */
+}
+
+.carousel {
+  display: flex;
+  gap:5px; 
+  // transition: transform 0.3s ease-in-out;
+}
+
+.product-card {
+  flex: 0 0 calc(100% / 6.5);
+  background: #fff;
+  text-align: left; /* Ürün detaylarını sola hizala */
+  border: 1px solid #eaeaea; /* Daha açık bir sınır */
+  border-radius: 2px;
+  position: relative;
+ 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Daha hafif gölge */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.02); /* Hover'da büyüme efekti */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Daha belirgin gölge */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 4px; /* Resim ile altındaki yazı arasında boşluk */
+  border-bottom: 1px solid #eaeaea; /* Resmin altında ince bir çizgi */
+  border-radius: 1px;
+}
+
+.product-card h3 {
+  font-family: "Roboto", sans-serif; /* Yazı tipi */
+  font-size: 14px; /* Yazı boyutu */
+  color: #333; /* Yazı rengi */
+  font-weight: 400; /* Yazı kalınlığı */
+  padding: 1px 4px;
+  line-height: 1.4; /* Satır aralığı */
+  max-height: 40px; /* En fazla 2 satır olmasını sağlar */
+  overflow: hidden; /* Fazla metni gizler */
+  text-overflow: ellipsis; /* Uzun metinlerde üç nokta ekler */
+  display: -webkit-box; /* Flex tabanlı görüntü */
+  -webkit-line-clamp: 2; /* En fazla 2 satır */
+  -webkit-box-orient: vertical; /* Metni dikeyde hizala */
+}
+
+.product-card p {
+  font-family: "Roboto", sans-serif; /* Yazı tipi */
+  font-size: 18px; /* Yazı boyutu */
+  color: #0038ae; /* Fiyat rengi */
+  font-weight: bold; /* Yazı kalınlığı */
+  margin: 5px 0;
+  text-align: left; /* Sol hizalama */
+  min-height: 24px; /* Sabit yükseklik, fiyatların hizalanması için */
+}
+
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #aaa;
+  border: none;
+  background: none;
+  transition: color 0.3s ease;
+}
+
+.heart-icon.favorited {
+  color: #0038ae
+
+;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    flex: 0 0 100%;
+  }
+}
+
     `;
     $("<style>").addClass("carousel-style").html(css).appendTo("head");
   };
@@ -171,10 +211,17 @@ document.getElementsByTagName("head")[0].appendChild(script);
 
   const scrollCarousel = (direction) => {
     const carousel = $(".carousel");
-    const currentScroll =
-      parseInt(carousel.css("transform").split(",")[4]) || 0;
     const productWidth = $(".product-card").outerWidth(true);
-    const newScroll = currentScroll + direction * productWidth;
+    const visibleWidth = $(".carousel-container").outerWidth();
+    const maxScroll = Math.floor(visibleWidth / productWidth) * productWidth;
+
+    let currentScroll = parseInt(carousel.css("transform").split(",")[4]) || 0;
+    let newScroll = currentScroll + direction * productWidth;
+
+    // Scroll sınırları kontrol et
+    newScroll = Math.max(newScroll, -maxScroll);
+    newScroll = Math.min(newScroll, 0);
+
     carousel.css("transform", `translateX(${newScroll}px)`);
   };
 
